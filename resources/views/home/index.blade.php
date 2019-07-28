@@ -6,7 +6,7 @@
 <body>
 
 <!-- 导航栏 -->
-@includeWhen($showNav, 'home.layouts.nav')
+@includeWhen($showNav ?? false, 'home.layouts.nav')
 
 @section('main')
     <main>
@@ -156,10 +156,10 @@
 @show
 
 <!-- top锚点 -->
-@includeWhen($showFooter, 'home.layouts.top-anchor')
+@includeWhen($showFooter ?? false, 'home.layouts.top-anchor')
 
 <!-- 页脚 -->
-@includeWhen($showFooter, 'home.common.footer')
+@includeWhen($showFooter ?? false, 'home.common.footer')
 
 </body>
 
@@ -212,6 +212,7 @@
             $('#img-frame').removeClass('s12').addClass('s10');
         });
 
+        @yield('scriptContent')
     });
 </script>
 </html>

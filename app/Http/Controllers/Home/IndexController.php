@@ -74,10 +74,7 @@ class IndexController extends BaseController
         });
 
         return view('home.detail', [
-            'info'       => $info,
-            'showNav'    => false,
-            'showFooter' => false,
-        ]);
+            'info' => $info]);
     }
 
     /**
@@ -85,10 +82,7 @@ class IndexController extends BaseController
      */
     public function login()
     {
-        return view('home.login', [
-            'showNav'    => false,
-            'showFooter' => false,
-        ]);
+        return view('home.login');
     }
 
     /**

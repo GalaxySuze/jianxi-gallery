@@ -4,6 +4,8 @@
     <style>
         body {
             background: #384548;
+            width: 100%;
+            height: 100%;
         }
     </style>
 
@@ -53,15 +55,18 @@
                                 </div>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="#!"><i class="material-icons">account_box</i>{{ $info['author'] }}</a>
+                                        <li><a href="#!"><i class="material-icons">account_box</i>{{ $info['author'] }}
+                                            </a>
                                         </li>
                                         <li><a href="#!"><i
                                                         class="material-icons">access_time</i>{{ $info['org_upload_time'] }}
                                             </a></li>
                                         <li><a href="#!"><i class="material-icons">note</i>{{ $info['size'] }}</a></li>
-                                        <li><a href="#!"><i class="material-icons">visibility</i>{{ $info['org_views'] }}
+                                        <li><a href="#!"><i
+                                                        class="material-icons">visibility</i>{{ $info['org_views'] }}
                                             </a></li>
-                                        <li><a href="#!"><i class="material-icons">star</i>{{ $info['org_star'] }}</a></li>
+                                        <li><a href="#!"><i class="material-icons">star</i>{{ $info['org_star'] }}</a>
+                                        </li>
                                         <li><a href="#!"><i
                                                         class="material-icons">cloud_download</i>{{ $info['downloads'] }}
                                             </a></li>
@@ -70,7 +75,8 @@
                             </li>
                             <li>
                                 <div class="collapsible-header blue-grey lighten-5"
-                                     style="border-bottom: 1px solid #e0e0e0;"><i class="material-icons">bookmark_border</i>标签
+                                     style="border-bottom: 1px solid #e0e0e0;"><i
+                                            class="material-icons">bookmark_border</i>标签
                                 </div>
                                 <div class="collapsible-body">
                                     <div class="row center">
@@ -103,7 +109,7 @@
             </div>
 
             <!-- 图片展示 -->
-            <div class="col s10 animated fadeIn" id="img-frame">
+            <div class="col s10" id="img-frame">
                 <div class="img-box">
                     <a target="_blank" href="{{ asset($info['img']) }}">
                         <img alt="{{ $info['code'] }}" src="{{ asset($info['img']) }}" class="z-depth-2 hoverable">
@@ -112,17 +118,17 @@
             </div>
 
         </div>
+    </main>
 
-        <!-- 信息框开关 -->
-        <div class="row" id="info-menu">
-            <div class="col s12">
-                <div class="fixed-action-btn horizontal">
-                    <a class="btn-floating btn-sm" style="background: #eee;">
-                        <i class="large material-icons red-text text-accent-1">menu</i>
-                    </a>
-                </div>
+    <!-- 信息框开关 -->
+    <div class="row" id="info-menu">
+        <div class="col s12">
+            <div class="fixed-action-btn horizontal">
+                <a class="btn-floating btn-sm" style="background: #eee;">
+                    <i class="large material-icons red-text text-accent-1">menu</i>
+                </a>
             </div>
         </div>
-    </main>
+    </div>
 
 @endsection

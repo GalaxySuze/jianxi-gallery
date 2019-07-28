@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'Home',], function () {
@@ -10,7 +11,9 @@ Route::group(['namespace' => 'Home',], function () {
 
     Route::get('/detail/{id}', 'IndexController@detail')->name('home.detail');
 
-    Route::get('/login', 'IndexController@login')->name('home.login');
-
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

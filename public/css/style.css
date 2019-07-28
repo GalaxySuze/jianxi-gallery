@@ -1,0 +1,78 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font: normal 100% Helvetica, Arial, sans-serif;
+    /*background: #384548;*/
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(http://cdn.bootcss.com/material-design-icons/2.1.1/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(http://cdn.bootcss.com/material-design-icons/2.1.1/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+    url(http://cdn.bootcss.com/material-design-icons/2.1.1/iconfont/MaterialIcons-Regular.woff) format('woff'),
+    url(http://cdn.bootcss.com/material-design-icons/2.1.1/iconfont/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.card-image > img {
+    cursor: pointer;
+    transition: all 2s;
+}
+
+.card-image > .img-selected:hover {
+    transform: scale(1.1); /*鼠标移动上去放大 0.5倍*/
+}
+
+.card {
+    position: relative;
+}
+
+.card > .page-info {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.img-box {
+    margin: 10% auto;
+    width: 800px;
+    height: 460px;
+    text-align:center
+}
+
+.img-box img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}

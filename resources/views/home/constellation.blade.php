@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>简兮</title>
+    <title>{{ config('app.name', '简兮') }}</title>
 
     <link rel="icon" href="{{ asset('favicon.png') }}" sizes="32x32">
 

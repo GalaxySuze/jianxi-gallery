@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 @include('home.common.header')
 
@@ -181,6 +181,14 @@
         // 分辨率过滤器初始化
         $('select').material_select();
 
+        //初始化下拉框
+        $('.dropdown-button').dropdown({
+                constrain_width: false,
+                belowOrigin: true,
+                alignment: 'center'
+            }
+        );
+
         $('.carousel .carousel-slider').carousel({full_width: true});
 
         $('main').on('click', '.works-section:last .load-more', function () {
@@ -210,6 +218,22 @@
             $('#info-menu').hide(500);
 
             $('#img-frame').removeClass('s12').addClass('s10');
+        });
+
+        $('#login-more-btn').click(function () {
+            if ($("#login-more-func").css("display") == "none") {
+                $('#login-more-func').show(500);
+            } else {
+                $('#login-more-func').hide(500);
+            }
+        });
+
+        $('#captcha').focus(function () {
+            $('#captcha-img').show(300);
+        });
+
+        $('#captcha').blur(function () {
+            $('#captcha-img').hide(300);
         });
 
         @yield('scriptContent')

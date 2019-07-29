@@ -7,7 +7,7 @@
             margin: 0;
             height: 100%;
             {{--            background: url({{ asset('img/login-side-bg-01.jpg') }}) #f0f0f4;--}}
-         background-size: cover;
+          background-size: cover;
             background: #d9afd9;
             background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 88%);
         }
@@ -22,7 +22,7 @@
             text-align: center;
         }
 
-        .title {
+        .title, .title > a {
             margin: 0 0 1.5rem;
             padding: 0;
             font-size: 2.5rem;
@@ -111,18 +111,19 @@
     <form class="log-in" method="POST" action="{{ route('login') }}">
         @csrf
 
-        <h1 class="title">登录 - {{ config('app.name', '简兮') }}</h1>
+        <h1 class="title">登录 - <a href="{{ route('home.index') }}">{{ config('app.name', '简兮') }}</a></h1>
         <div>
-            <input id="email" name="email" required class="validate" type="email" autofocus placeholder="E-mail" value="{{ old('email') }}" />
+            <input id="email" name="email" required class="validate" type="email" autofocus placeholder="E-mail"
+                   value="{{ old('email') }}"/>
             <label for="email"></label>
         </div>
         <div>
             <input id="pass" name="password" required class="validate tooltipped" data-position="right" data-delay="50"
-                   data-tooltip="密码要求: 长度大于等于8位,由数字,字母组成" type="password" placeholder="密码" />
+                   data-tooltip="密码要求: 长度大于等于8位,由数字,字母组成" type="password" placeholder="密码"/>
             <label for="pass"></label>
         </div>
         <div id="captcha-row">
-            <input id="captcha" name="captcha" required class="validate" type="text" placeholder="验证码" />
+            <input id="captcha" name="captcha" required class="validate" type="text" placeholder="验证码"/>
             <label for="captcha"></label>
             <span id="captcha-img" style="display: none;">
                 <img src="{{ captcha_src('flat') }}" class="z-depth-4" alt="验证码"

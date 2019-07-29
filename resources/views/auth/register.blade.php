@@ -22,7 +22,7 @@
             text-align: center;
         }
 
-        .title {
+        .title, .title > a {
             margin: 0 0 1.5rem;
             padding: 0;
             font-size: 2.5rem;
@@ -111,7 +111,7 @@
     <form class="log-in" method="POST" action="{{ route('register') }}">
         @csrf
 
-        <h1 class="title">注册 - {{ config('app.name', '简兮') }}</h1>
+        <h1 class="title">注册 - <a href="{{ route('home.index') }}">{{ config('app.name', '简兮') }}</a></h1>
         <div>
             <input id="name" name="name" required class="validate" type="text" autofocus placeholder="名称" value="{{ old('name') }}" />
             <label for="name"></label>

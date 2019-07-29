@@ -36,4 +36,28 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    /**
+     * @return array
+     */
+    protected function rules()
+    {
+        return [
+            'token'    => 'required',
+            'email'    => 'required|email',
+            'password' => 'required|confirmed|min:8',
+            'captcha'  => 'required|captcha',
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    protected function validationErrorMessages()
+    {
+        return [
+            'captcha.required' => '请输入验证码',
+            'captcha.captcha'  => '验证码不匹配',
+        ];
+    }
 }

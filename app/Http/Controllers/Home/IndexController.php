@@ -7,7 +7,6 @@ namespace App\Http\Controllers\Home;
 use App\Models\WhResolution;
 use App\Models\WhTag;
 use App\Models\WhWorks;
-use App\Support\Tool;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -80,9 +79,9 @@ class IndexController extends BaseController
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function login()
+    public function lockScreen()
     {
-        return view('home.login');
+        return view('home.lock-screen');
     }
 
     /**

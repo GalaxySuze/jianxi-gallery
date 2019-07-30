@@ -9,7 +9,7 @@
 
     <style>
         body {
-            background-image: linear-gradient( 135deg, #C2FFD8 10%, #465EFB 100%);
+            background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
         }
     </style>
 
@@ -18,11 +18,13 @@
 
         <h1 class="title">注册 - <a href="{{ route('home.index') }}">{{ config('app.name', '简兮') }}</a></h1>
         <div>
-            <input id="name" name="name" required class="validate" type="text" autofocus placeholder="名称" value="{{ old('name') }}" />
+            <input id="name" name="name" required class="validate" type="text" autofocus placeholder="名称"
+                   value="{{ old('name') }}"/>
             <label for="name"></label>
         </div>
         <div>
-            <input id="email" name="email" required class="validate" type="email" autofocus placeholder="E-mail" value="{{ old('email') }}" />
+            <input id="email" name="email" required class="validate" type="email" autofocus placeholder="E-mail"
+                   value="{{ old('email') }}"/>
             <label for="email"></label>
         </div>
         <div>
@@ -31,7 +33,8 @@
             <label for="pass"></label>
         </div>
         <div>
-            <input id="password-confirm" name="password_confirmation" required class="validate tooltipped" data-position="right" data-delay="50"
+            <input id="password-confirm" name="password_confirmation" required class="validate tooltipped"
+                   data-position="right" data-delay="50"
                    data-tooltip="密码要求: 长度大于等于8位,由数字,字母组成" type="password" placeholder="确认密码"/>
             <label for="password-confirm"></label>
         </div>
@@ -59,7 +62,7 @@
                     <span class="center-align"><strong class="red-text">{{ $errors->first('captcha') }}</strong></span>
                 @endif
                 @if ($errors->isEmpty())
-                    <!-- 一言 -->
+                <!-- 一言 -->
                     <p class="center-align" id="hitokoto">:D 获取中...</p>
                 @endif
             </span>
@@ -79,10 +82,10 @@
     xhr.open('get', 'https://v1.hitokoto.cn');
     xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
-            var data = JSON.parse(xhr.responseText);
-            var hitokoto = document.getElementById('hitokoto');
-            hitokoto.innerText = data.hitokoto;
-        }
+    var data = JSON.parse(xhr.responseText);
+    var hitokoto = document.getElementById('hitokoto');
+    hitokoto.innerText = data.hitokoto;
+    }
     }
     {{--    xhr.send();--}}
 @endsection

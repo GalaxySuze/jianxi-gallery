@@ -13,10 +13,6 @@ use Illuminate\Support\Str;
 
 class IndexController extends BaseController
 {
-
-    // 随机显示标签数
-    const RANDOM_TAG_NUM = 3;
-
     /**
      * IndexController constructor.
      */
@@ -30,13 +26,14 @@ class IndexController extends BaseController
      */
     public function index()
     {
+        // 加载更多
         $page = request()->get('page');
         if ($page && $page != 1) {
             return $this->worksView();
         }
 
         return view('home.index', [
-            'tags'           => WhTag::getRandomWhTagData(self::RANDOM_TAG_NUM),
+            'tags'           => WhTag::getRandomWhTagData(WhTag::RANDOM_TAG_NUM),
             'resolutionList' => WhResolution::getResolutionData(),
             'worksView'      => $this->worksView(),
             'showNav'        => true,

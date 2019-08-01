@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class WhTag extends Model
 {
+    /**
+     * 然删除
+     */
     use SoftDeletes;
 
     protected $table = 'wh_tag';
@@ -20,22 +23,17 @@ class WhTag extends Model
 
     /**
      * @param $limit
-     * @return array
+     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
      */
     public static function getRandomWhTagData($limit)
     {
         $query = WhTag::query();
+
         if ($limit) {
             $query = $query->offset(Tool::getRandomNumber())
                 ->limit($limit);
         }
-        return $query->get(['tag_name_zh'])
-            ->map(function ($v) {
-                $item = [
-                    'color' => Tool::getRandomColor(),
-                    'name'  => $v['tag_name_zh'],
-                ];
-                return $item;
-            })->all();
+
+        return $query->get(['tag_name_zh']);
     }
 }

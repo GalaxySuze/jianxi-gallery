@@ -57,7 +57,7 @@
                     <div class="divider"></div>
                 </li>
                 <li>
-                    <form>
+                    <form id="filter-form">
                         <ul class="collapsible" data-collapsible="expandable">
                             <li>
                                 <div class="collapsible-header blue-grey lighten-5 active"
@@ -66,18 +66,15 @@
                                 <div class="collapsible-body">
                                     <div class="row center">
                                         <div class="input-field col s4">
-                                            <input class="with-gap validate" name="filter_hot_group" type="radio"
-                                                   id="filter_star" checked/>
+                                            <input class="with-gap validate" name="filter_star" type="radio" id="filter_star" checked/>
                                             <label for="filter_star">收藏量</label>
                                         </div>
                                         <div class="input-field col s4">
-                                            <input class="with-gap validate" name="filter_hot_group" type="radio"
-                                                   id="filter_visit"/>
+                                            <input class="with-gap validate" name="filter_visit" type="radio" id="filter_visit"/>
                                             <label for="filter_visit">访问量</label>
                                         </div>
                                         <div class="input-field col s4">
-                                            <input class="with-gap validate" name="filter_hot_group" type="radio"
-                                                   id="filter_download"/>
+                                            <input class="with-gap validate" name="filter_download" type="radio" id="filter_download"/>
                                             <label for="filter_download">下载量</label>
                                         </div>
                                     </div>
@@ -90,23 +87,19 @@
                                 <div class="collapsible-body">
                                     <div class="row center">
                                         <div class="input-field col s6">
-                                            <input class="with-gap validate" name="filter_date_group" type="radio"
-                                                   id="filter_three_days" checked/>
+                                            <input class="with-gap validate" name="filter_three_days" type="radio" id="filter_three_days" checked/>
                                             <label for="filter_three_days">近三天</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input class="with-gap validate" name="filter_date_group" type="radio"
-                                                   id="filter_week"/>
+                                            <input class="with-gap validate" name="filter_week" type="radio" id="filter_week"/>
                                             <label for="filter_week">近一周</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input class="with-gap validate" name="filter_date_group" type="radio"
-                                                   id="filter_half_month"/>
+                                            <input class="with-gap validate" name="filter_half_month" type="radio" id="filter_half_month"/>
                                             <label for="filter_half_month">近半月</label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <input class="with-gap validate" name="filter_date_group" type="radio"
-                                                   id="filter_month"/>
+                                            <input class="with-gap validate" name="filter_month" type="radio" id="filter_month"/>
                                             <label for="filter_month">近一月</label>
                                         </div>
                                     </div>
@@ -191,6 +184,7 @@
 
         $('.carousel .carousel-slider').carousel({full_width: true});
 
+        // 加载更多
         $('main').on('click', '.works-section:last .load-more', function () {
             var el = $(this);
             var loadMoreURL = el.attr('load-more-url');
@@ -234,6 +228,28 @@
 
         $('#captcha').blur(function () {
             $('#captcha-img').hide(300);
+        });
+
+        // 搜索框
+        $('#search-form').submit(function () {
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'post',
+                url: '{{ route('home.search') }}',
+                data: {
+                    query: $('#search').val(),
+                    filter: $('#filter-form').serializeArray()
+                },
+                success: function(result){
+
+                },
+                error: function(xhr, errorText, errorType){
+                    console.log(errorType+":"+errorType);
+                }
+            });
+            return false;
         });
 
         @yield('scriptContent')

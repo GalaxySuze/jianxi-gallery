@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="910ffe4e-c412-4bbd-9fa6-70a36551fc53" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/WhTag.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/WhTag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/WhWorks.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/WhWorks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Support/Tool.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Support/Tool.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/layouts/works-section.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/layouts/works-section.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,9 +35,6 @@
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="PhpServers">
-    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -222,7 +222,7 @@
       <workItem from="1564109557572" duration="566000" />
       <workItem from="1564315696901" duration="30419000" />
       <workItem from="1565061453875" duration="507000" />
-      <workItem from="1566886906294" duration="721000" />
+      <workItem from="1566886906294" duration="4795000" />
     </task>
     <servers />
   </component>

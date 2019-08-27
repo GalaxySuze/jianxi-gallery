@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\Home\IndexController;
 use App\Support\Tool;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -12,6 +13,7 @@ class WhWorks extends Model
 
     const PROCESS_TYPE_TAG = 1;
     const PROCESS_TYPE_RESOLUTION = 2;
+    const DEFAULT_PAGES = 12;
 
     protected $table = 'wh_works';
 
@@ -40,7 +42,7 @@ class WhWorks extends Model
      * @param int $page
      * @return mixed
      */
-    public static function getWhWorksData($page = 12)
+    public static function getWhWorksData($page = self::DEFAULT_PAGES)
     {
         return WhWorks::paginate($page)->toArray();
     }

@@ -60,7 +60,7 @@
                     <i class="material-icons left">refresh</i>加载更多
                 </a>
             @else
-                <h6 class="blue-text accent-5">已经到达世界的尽头...😎</h6>
+                <h6 class="blue-text accent-5">抱歉...您已经到达世界的尽头...😎</h6>
             @endif
         </div>
     </div>

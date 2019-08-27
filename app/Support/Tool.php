@@ -54,4 +54,28 @@ class Tool
     {
         return Arr::random([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     }
+
+    /**
+     * @param $msg
+     * @return array
+     */
+    public static function failureAlert($msg)
+    {
+        return self::response($msg, [], 'failure');
+    }
+
+    /**
+     * @param string $msg
+     * @param array $result
+     * @param string $status
+     * @return array
+     */
+    public static function response($msg = '', $result = [], $status = 'succeed')
+    {
+        return [
+            'status' => $status == 'succeed' ? true : false,
+            'msg'    => $msg,
+            'data'   => $result,
+        ];
+    }
 }

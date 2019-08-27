@@ -7,6 +7,7 @@ Route::group(['namespace' => 'Home'], function () {
 
     Route::get('/detail/{id}', 'IndexController@detail')->name('home.detail');
     Route::get('/', 'IndexController@index')->name('home.index');
+    Route::post('/search', 'IndexController@search')->name('home.search');
 
     Route::get('/not-open', 'IndexController@notOpen')->name('home.not-open');
 

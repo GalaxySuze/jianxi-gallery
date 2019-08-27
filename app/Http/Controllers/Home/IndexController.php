@@ -32,8 +32,9 @@ class IndexController extends BaseController
             return $this->worksView();
         }
 
+        // 首页
         return view('home.index', [
-            'tags'           => WhTag::getRandomWhTagData(WhTag::RANDOM_TAG_NUM),
+            'tags'           => TagController::getRandomWhTag(),
             'resolutionList' => WhResolution::getResolutionData(),
             'worksView'      => $this->worksView(),
             'showNav'        => true,
@@ -69,8 +70,7 @@ class IndexController extends BaseController
             return $v = Str::title($v);
         });
 
-        return view('home.detail', [
-            'info' => $info]);
+        return view('home.detail', ['info' => $info]);
     }
 
     /**

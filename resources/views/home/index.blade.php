@@ -24,10 +24,10 @@
                     @if (isset($tags))
                         @foreach($tags as $tag)
                             <span style="padding-left: 5px; display: inline-block;">
-                        <a class="waves-effect waves-light btn z-depth-2 hoverable"
-                           style="background: {{ $tag['color'] }};">
-                        <i class="material-icons left">loyalty</i> {{ $tag['name'] }}</a>
-                    </span>
+                                <a class="waves-effect waves-light btn z-depth-2 hoverable"
+                                   style="background: {{ $tag['color'] }};">
+                                <i class="material-icons left">loyalty</i> {{ $tag['name'] }}</a>
+                            </span>
                         @endforeach
                     @endif
                 </div>

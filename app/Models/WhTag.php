@@ -30,8 +30,7 @@ class WhTag extends Model
         $query = WhTag::query();
 
         if ($limit) {
-            $query = $query->offset(Tool::getRandomNumber())
-                ->limit($limit);
+            $query = $query->offset(Tool::getRandomNumber())->limit($limit);
         }
 
         return $query->get(['tag_name_zh']);

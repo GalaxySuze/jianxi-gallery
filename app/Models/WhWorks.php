@@ -24,7 +24,8 @@ class WhWorks extends Model
     ];
 
     protected $casts = [
-        'tags' => 'array',
+        'tags'   => 'array',
+        'colors' => 'array',
     ];
 
     /**

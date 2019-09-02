@@ -2,22 +2,22 @@
 
 namespace App\Console\Commands;
 
-use App\Models\GkWorks;
-use App\Models\GkWorksImg;
 use App\Models\WhWorks;
 use App\Support\DownloadPicture;
 use App\Support\Tool;
 use App\Traits\CmdOutput;
 use Illuminate\Console\Command;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use QL\QueryList;
-use Symfony\Component\Console\Input\InputArgument;
 
 class Wallhaven extends Command
 {
     use CmdOutput;
+
+    const TEST_NOT = 0;
+    const TEST_LIST = 1;
+    const TEST_DETAIL = 2;
 
     /**
      * @var
@@ -26,7 +26,7 @@ class Wallhaven extends Command
     /**
      * @var string
      */
-    protected $signature = 'crawler:wallhaven {page=1 : 抓取的总页数}';
+    protected $signature = 'crawler:wallhaven {page=1 : 抓取的总页数} {url=https://wallhaven.cc/toplist : 抓取的页面链接} {--T|test=0 : 是否开启测试}';
     /**
      * @var string
      */
@@ -53,6 +53,8 @@ class Wallhaven extends Command
             // 默认分页
             $pagination = 1;
             $page = $this->argument('page');
+            $url = $this->argument('url');
+            $isTest = $this->option('test');
 
             // 页面抓取规则
             $rules = [
@@ -66,6 +68,7 @@ class Wallhaven extends Command
             // 详情页抓取规则
             $worksRules = [
                 'author'            => ['.sidebar-content > div[data-storage-id="showcase-info"] .username', 'text'],
+                'colors'            => ['.sidebar-content .color-palette', 'html'],
                 'upload_time'       => ['.sidebar-content > div[data-storage-id="showcase-info"] time', 'title'],
                 'original_category' => ['.sidebar-content > div[data-storage-id="showcase-info"] dd:eq(1)', 'text'],
                 'size'              => ['.sidebar-content > div[data-storage-id="showcase-info"] dd:eq(2)', 'html'],
@@ -77,8 +80,9 @@ class Wallhaven extends Command
             // 抓取元素切片
             $range = '#thumbs .thumb-listing-page > ul > li';
 
-            // 爬取链接
-            $url = "https://wallhaven.cc/toplist";
+            if ($isTest != self::TEST_NOT) {
+                return $this->testUnit([$rules, $worksRules, $range], $isTest);
+            }
 
             for ($p = $pagination; $p <= $page; $p++) {
 
@@ -122,9 +126,15 @@ class Wallhaven extends Command
                             ->rules($worksRules)
                             ->queryData(function ($item) use ($v) {
                                 // 分析tags
-                                $ql = QueryList::html($item['tags']);
-                                $item['tags'] = $ql->find('.tagname')->map(function ($j) {
-                                    return $j->text();
+                                $tagsQL = QueryList::html($item['tags']);
+                                $item['tags'] = $tagsQL->find('.tagname')->map(function ($tj) {
+                                    return $tj->text();
+                                })->all();
+
+                                // 分析colors
+                                $tagsQL = QueryList::html($item['colors']);
+                                $item['colors'] = $tagsQL->find('.color')->map(function ($cj) {
+                                    return Str::after($cj->attr('style'), 'background-color:');
                                 })->all();
 
                                 // 下载图片
@@ -154,6 +164,7 @@ class Wallhaven extends Command
                         ], [
                             'cover'           => $v['cover_path'],
                             'img'             => $v['picture_path'],
+                            'colors'          => $v['colors'],
                             'tags'            => $v['tags'],
                             'resolution'      => $v['resolution'],
                             'author'          => $v['author'],
@@ -179,5 +190,34 @@ class Wallhaven extends Command
         } catch (\Throwable $e) {
             $this->echoErr("发生异常", $e);
         }
+    }
+
+    /**
+     * @param $rule
+     * @param $type
+     */
+    public function testUnit($rule, $type)
+    {
+        list($rules, $worksRules, $range) = $rule;
+        switch ($type) {
+            case self::TEST_LIST:
+                $testHtml = file_get_contents(public_path('test/list.txt'));
+                break;
+            case self::TEST_DETAIL:
+                $testHtml = file_get_contents(public_path('test/detail.txt'));
+                break;
+            default:
+                $testHtml = null;
+        }
+
+        $data = null;
+        if ($type == self::TEST_LIST) {
+            $data = QueryList::rules($rules)->range($range)->html($testHtml)->query()->getData();
+        }
+        if ($type == self::TEST_DETAIL) {
+            $data = QueryList::rules($worksRules)->html($testHtml)->query()->getData();
+        }
+        dd($data);
+
     }
 }

@@ -136,7 +136,7 @@ class IndexController extends BaseController
         $dateValue = $date['name'];
         $resolutionValue = optional(WhResolution::where('resolution', $resolution['value'])->first())->id;
 
-        $data = WhWorks::where('title', trim($query))
+        $data = WhWorks::where('titlex', trim($query))
             ->when($dateMap[$dateValue], function ($q) use ($dateMap, $dateValue) {
                 $q->where('created_at', '>=', $dateMap[$dateValue]);
             })

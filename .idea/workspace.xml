@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="910ffe4e-c412-4bbd-9fa6-70a36551fc53" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Wallhaven.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Wallhaven.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/WhWorks.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/WhWorks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/test/test.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,6 +217,7 @@
       <workItem from="1565061453875" duration="507000" />
       <workItem from="1566886906294" duration="4795000" />
       <workItem from="1566987437924" duration="9574000" />
+      <workItem from="1567414635784" duration="254000" />
     </task>
     <servers />
   </component>

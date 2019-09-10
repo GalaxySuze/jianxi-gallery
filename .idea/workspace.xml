@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="910ffe4e-c412-4bbd-9fa6-70a36551fc53" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/AuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/ExampleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Admin/Controllers/WhWorksController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Admin/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Admin/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JaneXi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JaneXi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,6 +140,11 @@
       <path value="$PROJECT_DIR$/vendor/mews/captcha" />
       <path value="$PROJECT_DIR$/vendor/overtrue/laravel-lang" />
       <path value="$PROJECT_DIR$/vendor/caouecs/laravel-lang" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/encore/laravel-admin" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -141,6 +157,7 @@
     <ConfirmationsSetting value="2" id="添加" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
@@ -218,6 +235,7 @@
       <workItem from="1566886906294" duration="4795000" />
       <workItem from="1566987437924" duration="9574000" />
       <workItem from="1567414635784" duration="254000" />
+      <workItem from="1567679410832" duration="5014000" />
     </task>
     <servers />
   </component>
@@ -236,5 +254,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

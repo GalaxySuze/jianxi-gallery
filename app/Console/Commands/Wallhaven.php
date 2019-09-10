@@ -150,8 +150,6 @@ class Wallhaven extends Command
 
                         $v = array_merge($v, $workRes[0]);
 
-                        Log::info('works_all_data:', $v);
-
                         $this->info("写入数据库...");
 
                         // 过滤下格式

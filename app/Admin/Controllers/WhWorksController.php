@@ -44,7 +44,9 @@ class WhWorksController extends AdminController
         $grid->column('code', __('Code'));
         $grid->column('views', __('Views'))->sortable();
         $grid->column('downloads', __('Downloads'))->sortable();
-        $grid->column('colors', __('Colors'));
+        $grid->column('colors', __('Colors'))->display(function ($colors) {
+            return implode(',', $colors);
+        });
         $grid->column('colors_id', __('Colors id'));
         $grid->column('org_img_link', __('Org img link'));
         $grid->column('org_cover_link', __('Org cover link'));

@@ -9,12 +9,12 @@
 
 #### 示例截图
 
-![subtle-galaxy-1.jpg](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo1.jpg)
+![demo1](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo1.png)
 
-![subtle-galaxy-1.jpg](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo2.jpg)
+![demo2](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo2.png)
 
-![subtle-galaxy-1.jpg](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo3.jpg)
+![demo3](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo3.png)
 
-![subtle-galaxy-1.jpg](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo5.jpg)
+![demo5](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo5.png)
 
-![subtle-galaxy-1.jpg](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo4.jpg)
+![demo4](https://github.com/GalaxySuze/jianxi-gallery/raw/master/demo4.png)

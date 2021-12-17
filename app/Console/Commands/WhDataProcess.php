@@ -18,7 +18,7 @@ class WhDataProcess extends Command
      *
      * @var string
      */
-    protected $signature = 'process:wh-data-process {type : 加工类型}';
+    protected $signature = 'process:wh-data-process { type : 处理类型 - 1: tags,2: Resolution }';
 
     /**
      * The console command description.

@@ -48,7 +48,7 @@ class Wallhaven extends Command
     public function handle()
     {
         try {
-            $this->comment('🚀启动爬虫...');
+            $this->comment('!启动爬虫...');
 
             // 默认分页
             $pagination = 1;

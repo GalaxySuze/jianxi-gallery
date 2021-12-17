@@ -6,17 +6,17 @@
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li>
                 <a href="{{ route('home.not-open') }}"><i class="material-icons left"
-                                                          style="color: #ffedff">bookmark</i>标签</a>
+                                                          style="color: #ffedff">bookmark</i>菜单1</a>
             </li>
             <li>
-                <a href="{{ route('home.not-open') }}"><i class="material-icons left" style="color: #ffba92">star</i>星系</a>
+                <a href="{{ route('home.not-open') }}"><i class="material-icons left" style="color: #ffba92">star</i>菜单2</a>
             </li>
             <li>
                 <a href="{{ route('home.not-open') }}"><i class="material-icons left"
-                                                          style="color: #bbded6">theaters</i>周刊</a>
+                                                          style="color: #bbded6">theaters</i>菜单3</a>
             </li>
             <li>
-                <a href="{{ route('home.not-open') }}"><i class="material-icons left" style="color: #ffa1c5">photo</i>画廊</a>
+                <a href="{{ route('home.not-open') }}"><i class="material-icons left" style="color: #ffa1c5">photo</i>菜单4</a>
             </li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">

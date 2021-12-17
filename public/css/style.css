@@ -64,10 +64,13 @@ html, body {
 }
 
 .img-box {
-    margin: 10% auto;
-    width: 800px;
-    height: 460px;
-    text-align:center
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 80%;
+    height: 80%;
+    margin: 6% auto;
+    text-align: center
 }
 
 .img-box img {
